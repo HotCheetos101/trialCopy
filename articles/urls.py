@@ -17,14 +17,16 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path
 
-# views.py ni iya pasabot so tanan 
+# views.py ni iya pasabot so tanan
 from .import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.article_list, name="list"),
     # path('<slug:slug>/', views.article_detail ),
+
+
     path('<slug:slug>/', views.article_detail, name="detail"),
-    
-    
+
+
 ]

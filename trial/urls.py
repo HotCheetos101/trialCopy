@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# views.py ni iya pasabot so tanan 
+# views.py ni iya pasabot so tanan
 from .import views
 
 # gi add para sa css ug images
@@ -25,9 +25,16 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #gi include nato ang mga urls ni articles
+    # gi include nato ang mga urls ni articles
     path('articles/', include('articles.urls')),
+    path('accounts/', include('accounts.urls')),
+
+
+
+
     path('about/', views.about),
+    path('base_layout/', views.base_layout),
+
     path('', views.homepage),
 ]
 
