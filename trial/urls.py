@@ -23,19 +23,17 @@ from .import views
 # gi add para sa css ug images
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from articles import views as article_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # gi include nato ang mga urls ni articles
     path('articles/', include('articles.urls')),
     path('accounts/', include('accounts.urls')),
-
-
-
-
     path('about/', views.about),
     path('base_layout/', views.base_layout),
 
-    path('', views.homepage),
+    path('', article_views.article_list, name="home"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
