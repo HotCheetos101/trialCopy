@@ -1,17 +1,15 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<h1>Login</h1>
-
-<form class="site-form" action="/accounts/login/" method="post">
-    {% csrf_token %}
-
-    {{form}}
-
-    {% if request.GET.next %}
-    <input type="hidden" name="next" value="{{request.GET.next}}">
-    {% endif %}
-
-    <input type="submit" value="Login">
-</form>
+<div class="wrapper">
+    <h1 class="create_article-heading">Login</h1>
+    <form class="site-form" action="/accounts/login/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+        {% endif %}
+        <input class="create_article-submit" type="submit" value="Login">
+    </form>
+</div>
 {% endblock %}

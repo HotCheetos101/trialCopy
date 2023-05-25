@@ -25,11 +25,8 @@ from .import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.article_list, name="list"),
-    # path('<slug:slug>/', views.article_detail ),
     path('create/', views.article_create, name="create"),
-
-
     path('<slug:slug>/', views.article_detail, name="detail"),
-
-
+    path('article/<int:article_id>/create_reply/',
+         views.create_reply, name='create_reply'),
 ]

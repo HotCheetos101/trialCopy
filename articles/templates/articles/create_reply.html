@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="wrapper">
+    <h2 class="create_article-heading">Reply to the Topic</h2>
+    <form class="site-form" action="{% url 'create_reply' article_id=article.id %}" method="post"
+        enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input class="create_article-submit" type="submit" value="Reply">
+    </form>
+</div>
+{% endblock %}

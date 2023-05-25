@@ -11,16 +11,25 @@ class Article(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
-    # add in thumbnail
-    # add in author
-
-    # needs to be indentend
-
     def __str__(self):
         return self.title
 
-    def snipper(self):
+    def snippet(self):
         return self.body[:50] + '...'
+
+
+# added ni nimo
+
+
+class Reply(models.Model):
+    article = models.ForeignKey(
+        Article, on_delete=models.CASCADE, related_name='replies')
+    body = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+
+    def __str__(self):
+        return f"Reply by {self.author.username} on {self.article.title}"
 
 
 # if ever mag make kag new models

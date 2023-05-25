@@ -1,0 +1,105 @@
+/* style.css */
+
+/* Body background color */
+body {
+    background-color: #f2f2f2;
+}
+
+/* Wrapper styles */
+.wrapper {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1,
+h2.create_article-heading {
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Button styles */
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Login button styles */
+button a {
+    color: #ffffff;
+}
+
+/* Text box styles */
+input[type="text"],
+input[type="password"],
+textarea {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Additional Styles */
+
+/* Article Detail styles */
+.article-detail {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.article {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* List item styles */
+.articles {
+    margin-top: 20px;
+}
+
+.article {
+    margin-bottom: 20px;
+}

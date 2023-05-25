@@ -3,12 +3,36 @@
 {% block content %}
 <div class="article-detail">
     <div class="article">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.body }}</p>
+        <p>{{ article.date }}</p>
+    </div>
 
-        <h2>{{ article.title}}</h2>
-        <p>{{ article.body}}</p>
-        <p>{{ article.date}}</p>
+    <div class="replies">
+        <h3>Replies:</h3>
+        {% if article.replies.all %}
+        <ul>
+            {% for reply in article.replies.all %}
+            <li>{{ reply.body }}</li>
+            <p>Posted by: {{ reply.author }}</p>
+            <p>Posted at: {{ reply.date }}</p>
+            {% empty %}
+            <li>No replies yet.</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No replies yet.</p>
+        {% endif %}
+    </div>
 
+    <div class="reply-form">
+        <h3>Post a Reply:</h3>
+        <form method="POST" action="{% url 'create_reply' article_id=article.id %}">
+            {% csrf_token %}
+            <textarea name="body" rows="4" cols="50" placeholder="Enter your reply here"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </div>
-
 {% endblock %}
